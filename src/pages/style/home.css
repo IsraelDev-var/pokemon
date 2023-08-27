@@ -1,0 +1,17 @@
+.home__container{
+    display: grid;
+    place-items: center;
+    padding: 4px;
+
+    gap:1.5rem;
+}
+.home__info h2, p{
+    text-align: center;
+
+}
+.home__info h2{
+    font-size: x-large;
+    font-weight: 600;
+
+}
+
