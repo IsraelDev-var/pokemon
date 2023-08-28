@@ -6,7 +6,7 @@ import PokemonList from "../components/pokedex/PokemonList"
 
 const Pokedex = () => {
   const [pokemons, setPokemons] = useState([])
- const {name} = useSelector(store => store.userName)
+  const {name} = useSelector(store => store.userName)
 
   useEffect(() => {
     getAllpokemon()

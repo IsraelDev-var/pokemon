@@ -7,3 +7,11 @@ export const getAllpokemon = async ()=> {
     const {data} = await axios.get(url);
     return data.results;
 }
+
+export const getPokemonByUrl = async (pokemonUrl) =>{
+    const {data} = await axios.get(pokemonUrl);
+    const pokemon = {
+        
+    }
+    return data;
+}

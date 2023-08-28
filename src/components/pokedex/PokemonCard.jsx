@@ -1,10 +1,14 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { getPokemonByUrl } from "../../service/pokemon"
 
 const PokemonCard = ({pokemonUrl}) => {
+  const [pokemonInfo, setPokemonInfo] = useState([])
   
   useEffect(() => {
     
-    
+    getPokemonByUrl(pokemonUrl)
+    .then((data) => setPokemonInfo(data))
+    .catch((err) => console.log(err))
   }, [])
   
   return (

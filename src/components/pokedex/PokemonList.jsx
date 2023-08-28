@@ -4,7 +4,7 @@ const PokemonList = ({pokemons}) => {
   return (
     <section>
         {
-          pokemons.map((pokemon) => <PokemonCard key={pokemon.id} pokemonUrl={pokemon.url}/>)
+          pokemons.map((pokemon) => <PokemonCard key={pokemon.url} pokemonUrl={pokemon.url}/>)
         }
     </section>
   )

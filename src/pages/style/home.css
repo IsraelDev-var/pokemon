@@ -1,3 +1,7 @@
+.home__main{
+    background-image: url("/src/assets/bg.svg");
+}
+
 .home__container{
     display: grid;
     place-items: center;
