@@ -1,17 +1,20 @@
 import { useDispatch } from "react-redux";
 import Footer from "../components/Footer";
 import { loginUser } from "../store/slices/nameUser.slice";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     const dispatch = useDispatch()
+    const navegate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const nameUser = e.target.name.value;
-        dispatch(loginUser(nameUser))
+        dispatch(loginUser(nameUser));
+        navegate("/pokedex")
 
     };
-    
+
     return (
         <main>
         <section className="main h-screen grid place-items-center p-2 standar-value">
