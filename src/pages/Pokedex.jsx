@@ -1,15 +1,16 @@
 import axios from "axios"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
+import { getAllpokemon } from "../service/pokemon"
 
 const Pokedex = () => {
+  const [pokemons, setPokemons] = useState(null)
  const {name} = useSelector(store => store.userName)
 
   useEffect(() => {
-    axios
-      .get(url)
-      .then(({data}) => console.log(data))
-      .catch((err) => console.log(err))
+    getAllpokemon()
+    .then((data) => setPokemons(data))
+    .catch((err)=> console.log(err))
     
   }, [])
   
@@ -32,6 +33,7 @@ const Pokedex = () => {
           </div>
         </div>
       </section>
+      
 
     </main>
   )
