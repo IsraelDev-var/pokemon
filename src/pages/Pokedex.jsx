@@ -2,9 +2,10 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { getAllpokemon } from "../service/pokemon"
+import PokemonList from "../components/pokedex/PokemonList"
 
 const Pokedex = () => {
-  const [pokemons, setPokemons] = useState(null)
+  const [pokemons, setPokemons] = useState([])
  const {name} = useSelector(store => store.userName)
 
   useEffect(() => {
@@ -33,7 +34,7 @@ const Pokedex = () => {
           </div>
         </div>
       </section>
-      
+      <PokemonList pokemons={pokemons}/>
 
     </main>
   )

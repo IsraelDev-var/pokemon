@@ -29,7 +29,7 @@ const Home = () => {
             <div className="home__info">
                 <h2 className="home__title text-red-500">¡Hola entrenador!</h2>
                 <p>
-                To start, <span className="text-red-500">givr me tor name</span>
+                To start, <span className="text-red-500">give me your name</span>
                 </p>
             </div>
             <form
@@ -40,7 +40,7 @@ const Home = () => {
                 type="text"
                 required
                 autoComplete="off"
-                placeholder="Touy name"
+                placeholder="Your name"
                 id="name"
                 className="home__input md:w-[300px] p-2 shadow-lg"
                 />
