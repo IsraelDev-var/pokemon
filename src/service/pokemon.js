@@ -1,5 +1,5 @@
 import axios from "axios"
-import { Await } from "react-router-dom";
+
 
 
 
@@ -9,6 +9,37 @@ export const getAllpokemon = async ()=> {
 
     const {data} = await axios.get(url);
     return data.results;
+}
+export const getPokemonType = async (pokemonType) =>{
+    const url = `https://pokeapi.co/api/v2/type/${pokemonType}`;
+
+    const {data} = await axios.get(url);
+
+    const formatPokemon = data.pokemon.map(({pokemon}) => pokemon);
+    return formatPokemon;
+}
+
+export const getPokemonById = async (pokemonId) => {
+    console.log(pokemonId);
+
+    const url =`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`;
+    const {data} = await axios.get(url);
+    const pokemon = {
+        id: data.id,
+        name: data.name,
+        types: formateTypes(data.types),
+        stats: formateStats(data.stats),
+        image: data.sprites.versions["generation-v"]["black-white"].animated.front_default,
+        wieght: data.wieght,
+        hieght: data.hieght,
+        abilities: data.abilities,
+        moves: data.moves,
+
+
+    }
+    
+    return pokemon;
+
 }
 
 export const getPokemonByUrl = async (pokemonUrl) =>{
@@ -24,6 +55,7 @@ export const getPokemonByUrl = async (pokemonUrl) =>{
     
     return pokemon;
 }
+
 
 
 const formateTypes = (types) =>{
