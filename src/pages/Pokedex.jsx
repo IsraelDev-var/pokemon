@@ -1,7 +1,11 @@
 import PokemonList from "../components/pokedex/PokemonList";
 import usePokedex from "../components/hooks/usePokedex";
+import { useState } from "react";
 
 const Pokedex = () => {
+  const [currentPage, setCurrentPage] = useState(1)
+
+
   const {
     handlechagePokemonName,
     handlechageselect,
@@ -9,6 +13,7 @@ const Pokedex = () => {
 
     pokemonName,
     pokemonType,
+    types,
 
     pokemonsByName,
   } = usePokedex();
@@ -33,7 +38,13 @@ const Pokedex = () => {
             </form>
             <select value={pokemonType} onChange={handlechageselect}>
               <option value="">All pokemon</option>
-              <option value="rock">rock</option>
+              {
+                types.map((type) => (
+                  <option value={type.name} key={type.name} className="capitalize" >
+                    {type.name}
+                  </option>
+                  ) )
+              }
             </select>
           </div>
         </div>

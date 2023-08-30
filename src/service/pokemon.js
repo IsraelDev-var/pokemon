@@ -42,7 +42,13 @@ export const getPokemonById = async (pokemonId) => {
 
 }
 
+export const getAlltypes = async () =>{
+    const url = `https://pokeapi.co/api/v2/type/`;
 
+    const {data} = await axios.get(url)
+    return data.results;
+    
+}
 
 export const getPokemonByUrl = async (pokemonUrl) =>{
     const {data} = await axios.get(pokemonUrl);

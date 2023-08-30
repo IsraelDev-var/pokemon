@@ -1,13 +1,17 @@
-import { useSelector } from "react-redux"
-import { Outlet } from "react-router-dom"
+import { useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
+import Header from "../layout/Header";
 
 const PrivateRoute = () => {
+  const { name } = useSelector((store) => store.userName);
 
-    const {name} = useSelector((store) => store.userName)
+  if (name)
+    return (
+      <Header>
+        <Outlet />
+      </Header>
+    );
 
-    if(name) return <Outlet />
-
-    return <Navigator to="/" />
-
-}
-export default PrivateRoute
+  return <Navigator to="/" />;
+};
+export default PrivateRoute;
