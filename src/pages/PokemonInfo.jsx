@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { getPokemonById } from "../service/pokemon"
+import { bgStylePokemonType, getPokemonById } from "../service/pokemon"
+import Statsbar from "../components/pokemonInfo/statsbar"
 
 const PokemonInfo = () => {
   const [pokemonData, setPokemonData] = useState(null)
-  console.log(pokemonData);
+  
 
   const {pokedexId} = useParams()
-  console.log(pokedexId);
+  ;
 
   useEffect(() => {
     getPokemonById(pokedexId)
@@ -18,25 +19,25 @@ const PokemonInfo = () => {
   
   
   return (
-    <main>
-      <section className="pokemonInfo__container">
-        <header>
+    <main className="flex justify-center items-center">
+      <section className="pokemonInfo__container w-[min(100%,_400px)] ">
+        <header className={`flex justify-center h-12 items-center ${bgStylePokemonType[pokemonData?.types[0]]}`} >
         <div className="pokemonInfo__image">
           <img src={pokemonData?.image} alt="img" className="pokemosInfo__img" />
         </div>
         </header>
         
         <section className="container__data">
-          <div className="container__data1">
-            <h3>hola</h3>
+          <div className="container__data1 flex justify-center items-center ">
+            <span className="pokemonInfo__id"> # {pokemonData?.id} </span>
 
           </div>
           <div className="container__skills">
             
           </div>
-          <div className="container__stats">
-            
-          </div>
+          
+          <Statsbar stats={pokemonData?.stats} />
+          
         </section>
       </section>
     </main>

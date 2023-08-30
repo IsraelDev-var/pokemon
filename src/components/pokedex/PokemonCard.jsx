@@ -1,24 +1,12 @@
 import { useEffect, useState } from "react";
-import { getPokemonByUrl, joinPokemonTypes } from "../../service/pokemon";
+import { bgStylePokemonType, borderStylePokemonByType, getPokemonByUrl, joinPokemonTypes } from "../../service/pokemon";
 import StatList from "./StatList";
 import { Link } from "react-router-dom";
 
 const PokemonCard = ({ pokemonUrl }) => {
   const [pokemonInfo, setPokemonInfo] = useState([]);
 
-  const bgStylePokemonType = {
-    "grass": "bg-gradient-to-b from-green-500 to-green-300",
-    "fire": "bg-gradient-to-b from-orange-500 to-orange-300",
-    "water": "bg-gradient-to-b from-green-500 to-green-300",
-    "bug": "bg-gradient-to-b from-orange-500 to-orange-300",
-    "water": "bg-gradient-to-b from-blue-500 to-blue-300",
-    "bug": "bg-gradient-to-b from-orange-500 to-orange-300",
-    
-  };
-  const borderStylePokemonByType = {
-    "grass": "border-[5px] border-green-500",
-    "fire": "border-[5px] border-orange-500",
-  };
+
 
   useEffect(() => {
     getPokemonByUrl(pokemonUrl)

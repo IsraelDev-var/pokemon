@@ -42,6 +42,8 @@ export const getPokemonById = async (pokemonId) => {
 
 }
 
+
+
 export const getPokemonByUrl = async (pokemonUrl) =>{
     const {data} = await axios.get(pokemonUrl);
     const pokemon = {
@@ -49,12 +51,26 @@ export const getPokemonByUrl = async (pokemonUrl) =>{
         name: data.name,
         types: formateTypes(data.types),
         stats: formateStats(data.stats),
-        image: data.sprites.versions["generation-v"]["black-white"].animated.front_default
+        image: data.sprites.versions["generation-v"]["black-white"].animated.front_default,
 
     }
     
     return pokemon;
 }
+
+export const bgStylePokemonType = {
+    "grass": "bg-gradient-to-b from-green-500 to-green-300",
+    "fire": "bg-gradient-to-b from-orange-500 to-orange-300",
+    "water": "bg-gradient-to-b from-green-500 to-green-300",
+    "bug": "bg-gradient-to-b from-orange-500 to-orange-300",
+    "water": "bg-gradient-to-b from-blue-500 to-blue-300",
+    "bug": "bg-gradient-to-b from-orange-500 to-orange-300",
+    
+  };
+  export const borderStylePokemonByType = {
+    "grass": "border-[5px] border-green-500",
+    "fire": "border-[5px] border-orange-500",
+  };
 
 
 
