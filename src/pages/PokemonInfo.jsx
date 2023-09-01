@@ -21,7 +21,7 @@ const PokemonInfo = () => {
   
   return (
     <main className="flex justify-center items-center h-screen ">
-      <section className="pokemonInfo__container w-[min(100%,_400px)]  ">
+      <section className="pokemonInfo__container w-[min(100%,_400px)] p-2 ">
         <header className={`flex justify-center h-16 items-center ${bgStylePokemonType[pokemonData?.types[0]]}`} >
         <div className="pokemonInfo__image">
           <img src={pokemonData?.image} alt="img" className="pokemosInfo__img" />
