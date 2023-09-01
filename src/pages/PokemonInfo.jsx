@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { bgStylePokemonType, getPokemonById } from "../service/pokemon"
-import Statsbar from "../components/pokemonInfo/statsbar"
+import Statsbar from "../components/pokemonInfo/Statsbar"
+
 
 const PokemonInfo = () => {
   const [pokemonData, setPokemonData] = useState(null)
