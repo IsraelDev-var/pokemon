@@ -4,7 +4,7 @@ import axios from "axios"
 
 
 export const getAllpokemon = async ()=> {
-    const url ="https://pokeapi.co/api/v2/pokemon?limit=20";
+    const url ="https://pokeapi.co/api/v2/pokemon?limit=1281";
 
 
     const {data} = await axios.get(url);
@@ -20,7 +20,7 @@ export const getPokemonType = async (pokemonType) =>{
 }
 
 export const getPokemonById = async (pokemonId) => {
-    console.log(pokemonId);
+    
 
     const url =`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`;
     const {data} = await axios.get(url);
@@ -71,6 +71,14 @@ export const bgStylePokemonType = {
     "bug": "bg-gradient-to-b from-orange-500 to-orange-300",
     "water": "bg-gradient-to-b from-blue-500 to-blue-300",
     "bug": "bg-gradient-to-b from-orange-500 to-orange-300",
+
+      'normal': "bg-gradient-to-b from-orange-500 to-orange-300",
+      'flying': "bg-gradient-to-b from-orange-500 to-orange-300",
+      'poison': "bg-gradient-to-b from-porple-500 to-porple",
+      'ground': "bg-gradient-to-b from-orange-500 to-orange-300",
+      'ground': "bg-gradient-to-b from-orange-500 to-orange-300",
+      'rock': "bg-gradient-to-b from-red-500 to-red-300",
+      
     
   };
   export const borderStylePokemonByType = {

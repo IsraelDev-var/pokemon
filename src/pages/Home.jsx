@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
-import Footer from "../components/Footer";
+
 import { loginUser } from "../store/slices/nameUser.slice";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Home = () => {
     const dispatch = useDispatch()

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Header = ({ children }) => {
   return (
     <section>
@@ -6,11 +8,15 @@ const Header = ({ children }) => {
         <div className="bg-red-600 h-16 "></div>
         <div className="bg-black h-12 relative ">
         <div className="home__image ml-2 p-4 -translate-y-14 sm:w-[350px] w-[250px] ">
+          
+                
+                <Link to={"/pokedex"}>
                 <img
                 src="/images/image11.png"
                 alt="img titulo"
                 className="home__img bg-cover bg-center "
                 />
+                </Link>
             </div>
           <div
             className="h-[3.5rem] bg-white aspect-square rounded-full absolute
