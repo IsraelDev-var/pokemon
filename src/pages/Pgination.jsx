@@ -26,7 +26,7 @@ const Pgination = ({lastPage, setCurrentPage, pagesIncurrentBlock, currentPage})
 
     const handleLastPage = () => setCurrentPage(lastPage)
   return (
-    <ul className="flex justify-center items-center p-2 gap-2 mb-4  ">
+    <ul className="flex justify-center md:m-6 items-center py-2  gap-1 mb-4  ">
         <li onClick={handleFirtPage}><i className='bx bx-chevrons-left transition-shadow  hover:bg-red-500 p-2'></i></li>
         <li onClick={handlepreviusPage} ><i className='bx bx-chevron-left hover:bg-red-500 p-2' ></i></li>
         {

@@ -28,23 +28,23 @@ const Pokedex = () => {
 
   return (
     <main >
-      <section className="pokedex__container  p-2">
-        <div className="pokedex__header grid gap-4 p-4 ">
+      <section className="pokedex__container ">
+        <div className="pokedex__header grid  md:m-6 ">
           <p className="welcome__text font-bold mb-4 text-lg ">
             <span className="text-red-500">Welcome {name}</span> here you can find your favorite
             pokemon
           </p>
-          <div className="pokedex__inputs flex justify-center p-4">
-            <form className="form__container ">
+          <div className="pokedex__inputs flex justify-center ">
+            <form className="form__container  ">
               <input
                 value={pokemonName}
                 onChange={handlechagePokemonName}
                 placeholder="Search Pokemon"
                 type="text"
-                className="input__header outline-none border-2 p-1 border-red-500"
+                className="input__header md:w-[300px] w-[100px] outline-none border-2 p-1 border-red-500"
               />
             </form>
-            <select value={pokemonType} onChange={handlechageselect}>
+            <select className="" value={pokemonType} onChange={handlechageselect}>
               <option value="">All pokemon</option>
               {
                 types.map((type) => (
